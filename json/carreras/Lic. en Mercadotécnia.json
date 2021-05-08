@@ -1,0 +1,6 @@
+[
+    {"codigo":"DET-175",
+    "nombre":"Métodos 1",
+    "uv":"5",
+    "requisitos":["","",""]},
+    {"codigo":"","nombre":"Clase vacia","uv":"","requisitos":["","",""]},{"codigo":"FF-101","nombre":"Filosofia","uv":"4","requisitos":["","",""]}]

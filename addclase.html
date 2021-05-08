@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="jquery-3.5.1.js"></script>
+    <title>Document</title>
+        <style>
+        a[href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"] {
+    display: none;
+}
+    </style>
+    <style>
+          @font-face {
+    font-family: poppis-extrabold;
+    src: url(fonts/Poppins-ExtraBold.otf);
+  }
+  @font-face {
+    font-family: poppis;
+    src: url(fonts/Poppins-Regular.otf);
+  }
+  @font-face {
+    font-family: poppis-sembld-italc;
+    src: url(fonts/Poppins-SemiBoldItalic.otf);
+  }
+  body {
+    padding: 0px;
+    margin: 0px;
+    font-family: poppis;
+    max-width: 99%;
+  }
+  input{
+      margin: 10px;
+      width: 100%;
+  }
+  input:focus{
+    border-color: rgba(126, 239, 104, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+  outline: 0 none;
+  }
+  .form-control:focus {
+  border-color: teal;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 128, 128, 0.61);
+}
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+            <center>
+            <div class="col-12">
+                
+                    <h1>Agregar nueva clase</h1>
+                
+            </div>
+            <form action="php/agregarclase.php" method="post">
+          
+           
+            <div class="col-12">
+                <input type="text" class="form-control" placeholder="Codigo" name="cod">
+            </div>
+            <div class="col-12">
+                <input type="text" class="form-control" placeholder="Nombre" name="name">
+            </div>
+            <div class="col-12">
+                <input type="text" class="form-control" placeholder="UV" name="uv">
+            </div>
+            <div class="col-12">
+                <input type="text" class="form-control" placeholder="Requisito 1" name="r1">
+            </div>
+            <div class="col-12">
+                <input type="text" class="form-control" placeholder="Requisito 2" name="r2">
+            </div>
+            <div class="col-12">
+                <input type="text" class="form-control" placeholder="Requisito 3" name="r3">
+            </div>
+            <div class="col-12">
+                <button style="color: white; width: 100%; background: teal; margin:10px" type="submit">Guardar!</button>
+            </div>
+            
+           
+        </form>
+    </center>
+        </div>
+
+    
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

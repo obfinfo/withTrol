@@ -1,0 +1,2 @@
+<?php session_start();
+$Ncuenta =$_SESSION['logged_in_user_name']; $datos = file_get_contents('../json/usuarios/'.$Ncuenta.'/datos.json'); $datos3 =  json_decode($datos, true); echo $datos3['ultimoperiodo'];

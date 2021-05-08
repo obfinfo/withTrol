@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstraphor.css">
+    
+    <script src="jquery-3.5.1.js"></script>
+        <style>
+        a[href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"] {
+    display: none;
+}
+    </style>
+    <style>
+         @font-face {
+    font-family: poppis-extrabold;
+    src: url(fonts/Poppins-ExtraBold.otf);
+  }
+  h4 {
+      font-family: pippis-extrabold;
+  }
+  @font-face {
+    font-family: poppis;
+    src: url(fonts/Poppins-Regular.otf);
+  }
+  @font-face {
+    font-family: poppis-sembld-italc;
+    src: url(fonts/Poppins-SemiBoldItalic.otf);
+  }
+  *{
+    scroll-behavior: smooth; 
+  }
+  body {
+    padding: 0px;
+    margin: 0px;
+    font-family: poppis;
+    scroll-behavior: smooth;
+  }
+        .container-custom {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+.container-custom .section {
+    scroll-snap-align: start;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+}
+.container-custom .section:nth-child(1){
+    background: #4dd0e1;
+}
+.container-custom .section:nth-child(2){
+    background: #009688;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    position: relative;
+    top: -90px;
+}
+.container-custom .section:nth-child(3){
+    background: #fefefe;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    position: relative;
+    top: -180px;
+}
+.carta{
+    background: #fefefe;
+    width: 99.6%;
+    min-height: 100px;
+    border-radius: 20px;
+    margin: 0.2%;
+    padding: 10px;
+}
+.primera{
+    height: 30vh;
+    position: relative;
+}
+.segunda{
+    height: 20vh;
+    position: relative; 
+}
+tercera {
+    height: 30vh;
+    position: relative;
+}
+.mensajeenviando {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.37);
+    z-index: 999;
+}
+.todo{
+    width: 90%;
+    padding: 50px;
+    margin-top: 20vh;
+}
+.ilustracionseec1{
+    height: 20vh;
+    width: 80%;
+    padding-left: 30px;
+    margin-left: 18%;
+}
+.ilustracionseec2{
+    height: 18vh;
+    width: 80%;
+    margin-top: 1.5vh;
+    padding-left: 30px;
+    margin-left: 18%;
+}
+.ilustracionseec3{
+    height: 20vh;
+    width: 60%;
+    padding-left: 30px;
+    margin-left: 48%;
+}
+    </style>
+</head>
+<body>
+    <div class="mensajeenviando shadow">
+        <center>
+            <div class="carta enviando todo">
+                <img width="100%" src="enviando.gif" alt="">
+                <h1>Enviando...</h1>
+            </div>
+            <div class="carta enviado todo">
+                <img width="100%" src="check.png" alt="">
+                <h3 style="color: #14843c;">Enviado</h3>
+                <a onclick="javascript:history.go(-2)">
+                <button style="
+                width: 40%;
+                background: #fefefe;
+                color:black;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                " type="submit" class="btn btn-primary mb-2">Atras</button></a>
+
+<a href="addregis.html">
+                                <button style="
+                                width: 40%;
+                                background: #14843c;
+                                color:#fefefe;
+                                margin-top: 5px;
+                                margin-bottom: 5px;
+                                " type="submit" class="btn btn-primary mb-2">Nuevo</button></a>
+            </div>
+            <div class="carta error todo">
+                <img width="100%" src="error.png" alt="">
+                <h3>Error</h3>
+                <button onclick="enviar()" style="
+                width: 100%;
+                background: #fefefe;
+                color:red;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                " type="submit" class="btn btn-primary mb-2">Reintentar</button>
+            </div>
+        </center>
+    </div>
+    <div class="container-custom">
+        <div id="section1" class="section shadow">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row primera">
+                        <div class="col-12">
+                            <div class="ilustracionseec1">
+                                <img width="100%" src="media/undraw_Booking_re_gw4j.svg" alt="">
+                            </div>
+                            <h4 style="color: white; position: absolute; bottom: 10px;">Buscar Clase</h4>
+                        </div>
+                    </div>
+                    <div class="carta shadow">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <input type="text" class="form-control busqueda" placeholder="Ingrese el nombre o codigo">
+                                    <button onclick="buscar()" style="
+                            width: 100%;
+                            background: #4dd0e1;
+                            margin-top: 5px;
+                            margin-bottom: 5px;
+                            " type="submit" class="btn btn-primary mb-2">Buscar</button>
+                                </div>
+                               
+                            </div>
+                        </div>
+                       
+                        
+                        <table style="width: 100%; margin-top: 5px;
+                        margin-bottom: 5px;">
+                            <thead>
+                                <tr>
+                                    <th>Codigo</th>
+                                    <th>Nombre</th>
+                                    <th>UV</th>
+                                </tr>
+                            </thead>
+                            <tbody class="resultadodebusqueda">
+                                <tr >
+                                    <th></th>
+                                    <td>Sin Resultados</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section2" class="section shadow">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row segunda">
+                        
+                        <div class="col-12">
+                            <div class="ilustracionseec2">
+                                <img height="100%" src="media/undraw_Posts_re_ormv.svg" alt="">
+                            </div>
+                            <h4 style="color: white; position: absolute; bottom: 10px;">Nota y periodo</h4>
+                        </div>
+                    </div>
+                    <div class="row carta shadow">
+                        <div class="col-12">
+                            <p>Codigo: <strong><span class="codclass"></span></strong></p>
+                            <p>Nombre: <strong><span class="nameclass"></span></strong></p>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="number" class="form-control nota" placeholder="nota">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="cars">Periodo:</label>
+
+                                <select name="cars" class="periodo" id="cars periodo">
+                                    <option value="I">I</option>
+                                    <option value="II">II</option>
+                                    <option value="III">III</option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <label for="fecha">Fecha:</label>
+
+                                <!--<select name="cars" id="cars periodo">
+                                        <option>Select Year</option>
+                                        <?php foreach($years as $year) : ?>
+                                            <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                                        <?php endforeach; ?>
+                                </select>-->
+                                <input type="month" id="myMonth" class="fecha" min="2020-01"/>
+                            </div>
+                         </div>
+                        <div class="col-12">
+                            <button onclick="confirmarnota()" style="
+                            width: 100%;
+                            background: #009688;
+                            margin-top: 5px;
+                            margin-bottom: 5px;
+                            " type="submit" class="btn btn-primary mb-2">Confirmar!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section3" class="section ">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row tercera">
+                        <div class="col-12">
+                            <div class="ilustracionseec3">
+                                <img width="100%" src="media/undraw_cloud_sync_2aph.svg" alt="">
+                            </div>
+                            <h4 style="color: black; position: absolute; bottom: 10px;">Confirmar Datos</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-12">
+                        <p>Codigo de la clase: <span class="codclass"></span></p>
+                        <p>Nombre de la clase: <span class="nameclass"></span></p>
+                        <p>UV Requeridos: <span class="uvclass"></span></p>
+                        <p>Nota: <span class="notaclass"></span></p>
+                        <p>Periodo: <span class="periodoclass"></span></p>
+                       </div>
+                            <div class="col-12">
+                                <button onclick="enviar()" style="
+                                width: 100%;
+                                background: #fefefe;
+                                color:black;
+                                margin-top: 5px;
+                                margin-bottom: 5px;
+                                " type="submit" class="btn btn-primary mb-2">Enviar!</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="jquery-3.5.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+
+                 inicializar();
+
+function inicializar() {
+    $(".enviando").hide();
+    $(".enviado").hide();
+    $(".mensajeenviando").hide();
+    $(".error").hide();
+
+    
+}
+var codigovar = "";
+var nombrevar = "";
+var uvvar = "";
+var notavar = "";
+var periodovar = "";
+       
+        function buscar() {
+            var str = $(".busqueda").val();
+            var parametros = {"parametro" : str};
+            $.ajax({
+                data: parametros,
+                type:  'post',
+                url: "php/buscar.php",
+                }).done(function(data) {
+                $(".resultadodebusqueda").html(data);
+                });
+        }
+
+
+        function confirmarresultado(codigo, nombre, uv) {
+            codigovar = codigo;
+            nombrevar = nombre;
+            uvvar = uv;
+            window.location.href = '#section2';
+            $('.codclass').text(codigo);
+            $('.nameclass').text(nombre);
+            $('.uvclass').text(uv);
+        }
+
+        function confirmarnota() {
+            notavar = $(".nota").val();
+            var year = document.getElementById("myMonth").value.split("-");
+            var periodoht = $(".periodo").children("option:selected").val();
+            periodovar = periodoht + ' ' + year[0];
+            $('.notaclass').text(notavar);
+            $('.periodoclass').text(periodovar);
+            window.location.href = '#section3';
+        }
+        function enviar() {
+            $(".error").hide();
+            $(".enviado").hide();
+            $(".enviando").show();
+            $(".mensajeenviando").show();
+            var parametros2 = {
+                "codigo": codigovar,
+                "nombre": nombrevar,
+                "uv": uvvar,
+                "nota": notavar,
+                "periodo": periodovar
+            };
+            $.ajax({
+                data: parametros2,
+                type:  'post',
+                url: "php/enviardatos.php",
+                }).done(function() {
+                    $(".enviando").hide();
+                    $(".enviado").show();
+                    $(".mensajeenviando").show();
+                }).fail(function() {
+                    $(".enviado").hide();
+                    $(".enviando").hide();
+                    $(".error").show();
+                });
+        }
+    </script>
+</body>
+</html>

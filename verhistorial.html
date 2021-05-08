@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstraphor.css">
+    <script src="chart.min.js"></script>
+    <link rel="stylesheet" href="animate.min.css">
+        <style>
+        a[href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"] {
+    display: none;
+}
+    </style>
+    <style>
+@font-face {
+    font-family: poppis-extrabold;
+    src: url(fonts/Poppins-ExtraBold.otf);
+  }
+  @font-face {
+    font-family: poppis;
+    src: url(fonts/Poppins-Regular.otf);
+  }
+  body{
+    font-family: poppis;
+  }
+  h2{
+      font-family: poppis-extrabold;
+  }
+        .row1{
+            background-color: #6f50ff;
+            width: 100%;
+            height: 300px;
+            padding-top: 90px;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            color: white;
+            padding-left: 30px;
+        }
+        .row2{
+            margin-top: 200px;
+            background-color: #ffff;
+            width: 100%;
+            height: 100vh;
+            z-index: 99;
+            border-top-right-radius: 40px;
+            border-top-left-radius: 40px;
+            box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.247);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row1">
+        <h2>Historial</h2>
+    </div>
+<div class="row2">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <label for="sp">Periodo: </label>
+            </div>
+            <div class="col-2">
+                <select name="sp" class="periodo" id="cars periodo">
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                </select>
+            </div>
+            <div class="co-2">
+                <label for="fecha">Fecha:</label>
+            </div>
+            <div class="col-3">
+                <input type="month" id="myMonth" class="fecha" min="2020-01"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+              <div class="row" style="padding-right: 5px; padding-left: 5px;">
+
+
+                <table class="table table-hover" >
+                  <tbody class="gethistorialfull">
+                    <center><img class="loading" src="Infinity-1.6s-200px.gif" style="margin-left: 40%;" alt=""></center>
+                  </tbody>
+                </table>
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+    </div>
+
+    
+
+
+
+
+</div>
+
+
+    <script src="jquery-3.5.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        var date = "";
+        var per ="";
+        var year = "";
+        var parametros ={
+            "date":""
+        };
+
+        $("#myMonth").change(function() {
+            var fec = document.getElementById("myMonth").value.split("-");
+            year = fec[0];
+            date = per + ' ' + year;
+            parametros['date'] = date;
+            $(".gethistorialfull").html("");
+            $(".loading").show();
+            getdatos();
+        });
+
+        $(".periodo").change(function() {
+            per = $(this).children("option:selected").val();
+            date = per + ' ' + year;
+            parametros['date'] = date;
+            $(".gethistorialfull").html("");
+            $(".loading").show();
+            getdatos();
+        });
+
+
+        getdatos();
+        function getdatos() {
+            $.ajax({
+                data: parametros,
+                type:  'post',
+                url: "php/getHistoriafull.php",
+                }).done(function(data) {
+                $(".gethistorialfull").html(data);
+                $(".loading").hide();
+                });
+        }
+    </script>
+</body>
+</html>
